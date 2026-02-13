@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse | Mobile Reading Experience</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@300,400,500,600,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div class="glow-container">
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+            <div class="glow-blur-overlay"></div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="logo">
+                    PULSE
+                </a>
+                <div class="nav-actions">
+                    <a href="javascript:void(0)" class="btn-contact" id="contact-btn"
+                        data-email="reigen310106@gmail.com">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="container hero-main">
+                <h1 class="hero-title reveal">
+                    Your stories, their phones. Instantly.
+                </h1>
+
+                <div class="hero-footer reveal delay-1">
+                    <p class="hero-sub">
+                        Pulse is a mobile-first newsletter platform that delivers your content directly to readers'
+                        devices with a native, beautiful reading experience.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="https://github.com/SaishNehe05/pulse" target="_blank" class="btn-primary">View on
+                            GitHub</a>
+                        <a href="#features" class="btn-secondary">Explore Features</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="features" id="features">
+            <div class="container features-grid">
+                <!-- Card 01 -->
+                <div class="feature-card reveal delay-1">
+                    <div class="card-content">
+                        <div class="card-number">01</div>
+                        <h3 class="feature-title">Native Reading</h3>
+                        <p class="feature-desc">Optimized for mobile with smooth scrolling and high-readability fonts.
+                            The native experience your readers deserve.</p>
+                    </div>
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="feature-card reveal delay-2">
+                    <div class="card-content">
+                        <div class="card-number">02</div>
+                        <h3 class="feature-title">Real-time Updates</h3>
+                        <p class="feature-desc">Powered by Supabase Realtime to notify users of new posts instantly. No
+                            refresh needed.</p>
+                    </div>
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 03 -->
+                <div class="feature-card reveal delay-1">
+                    <div class="card-content">
+                        <div class="card-number">03</div>
+                        <h3 class="feature-title">Markdown Support</h3>
+                        <p class="feature-desc">Write and render posts using clean Markdown syntax. Focus on your
+                            writing, not the formatting.</p>
+                    </div>
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 04 -->
+                <div class="feature-card reveal delay-2">
+                    <div class="card-content">
+                        <div class="card-number">04</div>
+                        <h3 class="feature-title">Secure Auth</h3>
+                        <p class="feature-desc">Secure "Magic Link" or Social login via Supabase Auth. Your users' data
+                            is always protected.</p>
+                    </div>
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 05 -->
+                <div class="feature-card reveal delay-1">
+                    <div class="card-content">
+                        <div class="card-number">05</div>
+                        <h3 class="feature-title">Image Hosting</h3>
+                        <p class="feature-desc">Optimized image storage and delivery using Supabase Storage. Fast,
+                            reliable, and scalable.</p>
+                    </div>
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 06 -->
+                <div class="feature-card reveal delay-2">
+                    <div class="card-content">
+                        <div class="card-number">06</div>
+                        <h3 class="feature-title">Creator Tools</h3>
+                        <p class="feature-desc">Manage subscribers, track engagement, grow your audience. Everything you
+                            need to succeed.</p>
+                    </div>
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="open-source" id="open-source">
+            <div class="container open-source-content">
+                <h2 class="open-source-title reveal"><span class="highlight-text">Open Source & Built for
+                        Creators</span></h2>
+                <p class="open-source-subtitle reveal delay-1">Pulse is an open-source project built with React Native
+                    and
+                    Supabase. Explore the code and contribute on GitHub.</p>
+                <div class="open-source-buttons reveal delay-2">
+                    <a href="https://github.com/SaishNehe05/pulse" target="_blank" class="github-button">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
+                        </svg>
+                        View on GitHub
+                    </a>
+                    <a href="https://drive.google.com/file/d/1m9woAPCSf8yZkpi0Y2ebnzvxu2vYJ2s5/view?usp=sharing"
+                        target="_blank" class="github-button"
+                        style="background: var(--secondary); color: var(--bg-dark); border-color: var(--secondary);">
+                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download APK
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">PULSE</div>
+                    <p class="footer-tagline">Your stories, their phones. Instantly.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#features">Features</a>
+                    <a href="#open-source">Open Source</a>
+                    <a href="https://github.com/SaishNehe05/pulse" target="_blank">GitHub</a>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2026 Pulse. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Other sections like features can be added back here if needed, but keeping it minimal for now to match reference -->
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

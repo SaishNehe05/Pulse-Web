@@ -117,7 +117,7 @@ Performance optimization for low-end devices
 
 Accessibility improvements (ARIA roles, keyboard navigation)
 
-Deployment (Vercel / Netlify)
+Deployment (cloudflare)
 
 👨‍💻 Author
 

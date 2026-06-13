@@ -6,8 +6,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Pulse: Creative Glow & Navbar Initialized');
 
-    const root = document.documentElement;
-    const navbar = document.querySelector('.navbar'); // Target the navbar
+    const navbar = document.querySelector('.navbar');
+
+    // Get direct references to orb DOM elements
+    const orbEl1 = document.querySelector('.orb-1');
+    const orbEl2 = document.querySelector('.orb-2');
+    const orbElements = [orbEl1, orbEl2];
+
     let width = window.innerWidth;
     let height = window.innerHeight;
 
@@ -39,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
             targetY: startY1,
             vx: 0,
             vy: 0,
-            stiffness: 0.02, // Increased base stiffness (was 0.007)
+            stiffness: 0.02,
             damping: 0.82,
-            mass: 12.0 // Slightly lighter mass for speed
+            mass: 12.0
         },
         {
             x: startX2,
@@ -50,13 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
             targetY: startY2,
             vx: 0,
             vy: 0,
-            stiffness: 0.015, // Increased base stiffness (was 0.004)
+            stiffness: 0.015,
             damping: 0.85,
-            mass: 15.0 // Slightly lighter mass for speed
+            mass: 15.0
         }
     ];
 
-    // --- NEW: Navbar Scroll Logic ---
+    // --- Navbar Scroll Logic ---
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -93,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             isInFeatures = entry.isIntersecting;
         });
-    }, { threshold: 0.2 }); // Trigger when 20% of the section is visible
+    }, { threshold: 0.2 });
 
     observer.observe(featuresSection);
 
@@ -124,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Magnetic attraction: pull is stronger when closer
             const magneticStrength = Math.max(0.1, 1 - (distance / 1000));
-            // DRASTIC INCREASE: Split even faster (25x boost)
             const splitSpeedBoost = isInFeatures ? 25 : 1;
             const currentStiffness = orb.stiffness * (1 + magneticStrength * 10) * splitSpeedBoost;
 
@@ -136,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             orb.vx += ax / orb.mass;
             orb.vy += ay / orb.mass;
 
-            // Dynamic Damping: Increase damping (lower multiplier) during split to stop bouncing
+            // Dynamic Damping
             const currentDamping = isInFeatures ? 0.65 : orb.damping;
             orb.vx *= currentDamping;
             orb.vy *= currentDamping;
@@ -145,26 +149,24 @@ document.addEventListener('DOMContentLoaded', () => {
             orb.x += orb.vx;
             orb.y += orb.vy;
 
-            // Apply to specific orb variables
-            const id = i + 1;
-            root.style.setProperty(`--mouseX${id}`, `${orb.x}px`);
-            root.style.setProperty(`--mouseY${id}`, `${orb.y}px`);
-
             // Sticky Stretch toward movement/direction
             const speed = Math.sqrt(orb.vx * orb.vx + orb.vy * orb.vy);
             const stretch = 1 + (speed * 0.015);
             const angle = Math.atan2(orb.vy, orb.vx) * (180 / Math.PI);
 
-            root.style.setProperty(`--scale${id}`, stretch);
-            root.style.setProperty(`--rotate${id}`, `${angle}deg`);
+            // Apply directly to DOM element inline styles (reliable across all browsers)
+            const el = orbElements[i];
+            if (el) {
+                el.style.left = orb.x + 'px';
+                el.style.top = orb.y + 'px';
+                el.style.transform = 'translate(-50%, -50%) rotate(' + angle + 'deg) scaleX(' + stretch + ')';
+            }
         });
 
         requestAnimationFrame(animate);
     }
 
-    // Feature Card Spotlight Effect removed as requested
-
-    console.log("Pulse Main JS Loaded"); // Verify execution
+    console.log("Pulse Main JS Loaded");
 
     animate();
 
@@ -179,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         height = window.innerHeight;
     });
 
-    // --- NEW: Contact Clipboard Logic ---
+    // --- Contact Clipboard Logic ---
     const contactBtn = document.getElementById('contact-btn');
     if (contactBtn) {
         contactBtn.addEventListener('click', (e) => {
@@ -212,4 +214,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-});
+});
